@@ -33,6 +33,9 @@ export const UserStatistics = () => {
     }
   ];
 
+  // Ссылка на вырезанный круг
+  const circleImageUrl = "https://cdn.poehali.dev/files/aa3022a4-fe01-4f57-be7d-bd854b127897.png";
+
   return (
     <div className="mb-6">
       <div className="flex justify-between items-center mb-4">
@@ -42,29 +45,38 @@ export const UserStatistics = () => {
         </svg>
       </div>
       
-      {/* Карточка со статистикой без обводки, просто с фоном */}
+      {/* Карточка статистики */}
       <div className="bg-[#512226] rounded-2xl p-5 flex flex-col items-center">
         <div className="text-center mb-6">
           <p className="text-sm text-gray-300 mb-2">Total hours</p>
           
-          {/* Прямая вставка круга с изображения */}
+          {/* Контейнер для круга и текста */}
           <div className="relative w-36 h-36 flex items-center justify-center">
-            {/* Изображение круга напрямую с референса */}
-            <img 
-              src="https://cdn.poehali.dev/files/aa3022a4-fe01-4f57-be7d-bd854b127897.png" 
-              alt="Hours circle" 
-              className="absolute inset-0 w-full h-full object-contain"
+            {/* CSS-маска с вырезанным кругом через background-image */}
+            <div 
+              className="absolute inset-0 w-full h-full" 
+              style={{
+                backgroundImage: `url(${circleImageUrl})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                // Используем CSS clip-path для вырезания только круга из изображения
+                clipPath: 'circle(36% at center)',
+                // Добавляем фильтр для улучшения яркости и контраста
+                filter: 'brightness(1.05) contrast(1.1)'
+              }}
             />
             
-            {/* Центральный текст поверх изображения */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <p className="text-3xl font-bold text-white z-10">12,340h</p>
-            </div>
+            {/* Центральный темный круг */}
+            <div className="absolute inset-7 bg-[#512226] rounded-full"></div>
+            
+            {/* Текст с часами */}
+            <p className="text-3xl font-bold text-white relative z-10">12,340h</p>
           </div>
         </div>
         
-        {/* Иконки с часами */}
-        <div className="w-full grid grid-cols-3 gap-4 mt-2">
+        {/* Иконки игр с часами */}
+        <div className="w-full grid grid-cols-3 gap-4">
           {stats.map((stat) => (
             <GameStatItem key={stat.id} stat={stat} />
           ))}
@@ -77,7 +89,7 @@ export const UserStatistics = () => {
 const GameStatItem = ({ stat }: { stat: GameStat }) => {
   return (
     <div className="flex flex-col items-center">
-      {/* Круглая цветная иконка без обводки - прямо с изображения */}
+      {/* Круглая цветная иконка */}
       <div className="w-12 h-12 rounded-full flex items-center justify-center mb-1.5" style={{ backgroundColor: stat.color }}>
         <img 
           src={stat.image} 
