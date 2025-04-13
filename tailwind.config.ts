@@ -61,6 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Добавленные цвета для дашборда
+				game: {
+					dark: '#441C1F',
+					primary: '#6D2C32',
+					secondary: '#823C42',
+					accent: '#512226',
+					light: '#FFF8E7'
 				}
 			},
 			borderRadius: {
