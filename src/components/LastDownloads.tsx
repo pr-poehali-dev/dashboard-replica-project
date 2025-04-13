@@ -17,7 +17,7 @@ export const LastDownloads = () => {
       id: 1,
       title: "FIFA 23",
       category: "Sports simulator",
-      image: "https://cdn.poehali.dev/files/ca489709-fce3-43c4-a0ec-ea2adc5879a6.png",
+      image: "https://cdn.poehali.dev/files/4f77c54e-4e17-4745-9fb9-5471fb41a0af.png",
       time: "1 hour 23 min.",
       size: "265MB of 123GB"
     }
@@ -41,7 +41,8 @@ const DownloadCard = ({ game }: { game: DownloadedGame }) => {
   return (
     <Card className="bg-[#823C42] rounded-xl overflow-hidden">
       <div className="flex items-center p-3">
-        <div className="bg-[#FFF8E7] w-16 h-16 rounded-xl flex items-center justify-center mr-4 overflow-hidden">
+        {/* Иконка игры в квадрате */}
+        <div className="bg-[#FFF8E7] w-16 h-16 rounded-lg flex items-center justify-center mr-4 overflow-hidden flex-shrink-0">
           <img 
             src={game.image} 
             alt={game.title} 
@@ -49,27 +50,31 @@ const DownloadCard = ({ game }: { game: DownloadedGame }) => {
           />
         </div>
         
+        {/* Название и категория */}
         <div className="flex-1">
-          <h3 className="font-bold text-base">{game.title}</h3>
-          <Badge className="bg-[#6D2C32] text-white rounded-md text-xs px-2 py-0.5">
+          <h3 className="font-bold text-base text-white">{game.title}</h3>
+          <Badge className="bg-[#6D2C32] text-white text-[10px] px-2 py-0.5 rounded font-normal">
             {game.category}
           </Badge>
         </div>
         
+        {/* Правая часть с временем и кнопками */}
         <div className="flex items-center gap-2">
           <div className="text-right mr-4">
-            <p className="text-sm">{game.time}</p>
+            <p className="text-sm text-white">{game.time}</p>
             <p className="text-xs text-gray-300">{game.size}</p>
           </div>
           
-          <Button variant="ghost" className="rounded-full p-2 bg-[#6D2C32]/70 hover:bg-[#6D2C32]">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          {/* Кнопка Play */}
+          <Button variant="ghost" className="rounded-full p-1.5 bg-[#6D2C32] hover:bg-[#7D363C] min-w-[32px] min-h-[32px] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M5 3L19 12L5 21V3Z" fill="white" />
             </svg>
           </Button>
           
-          <Button variant="ghost" className="rounded-full p-2 bg-[#6D2C32]/70 hover:bg-[#6D2C32]">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          {/* Кнопка Close */}
+          <Button variant="ghost" className="rounded-full p-1.5 bg-[#6D2C32] hover:bg-[#7D363C] min-w-[32px] min-h-[32px] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 6L6 18M6 6L18 18" />
             </svg>
           </Button>
