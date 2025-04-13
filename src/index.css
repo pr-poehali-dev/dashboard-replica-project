@@ -49,13 +49,6 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
-    
-    /* Game Dashboard Colors */
-    --game-dark: 350 41% 19%;
-    --game-primary: 350 42% 30%;
-    --game-secondary: 350 42% 38%;
-    --game-accent: 350 41% 22%;
-    --game-light: 41 100% 97%;
   }
 
   .dark {
@@ -86,7 +79,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -95,13 +87,6 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    
-    /* Game Dashboard Colors - Dark Mode */
-    --game-dark: 350 41% 19%;
-    --game-primary: 350 42% 30%;
-    --game-secondary: 350 42% 38%;
-    --game-accent: 350 41% 22%;
-    --game-light: 41 100% 97%;
   }
 }
 

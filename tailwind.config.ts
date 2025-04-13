@@ -63,11 +63,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				game: {
-					dark: 'hsl(var(--game-dark))',
-					primary: 'hsl(var(--game-primary))',
-					secondary: 'hsl(var(--game-secondary))',
-					accent: 'hsl(var(--game-accent))',
-					light: 'hsl(var(--game-light))'
+					dark: '#441C1F',     // темный бордовый для боковых панелей
+					primary: '#6D2C32',  // основной бордовый для фона
+					secondary: '#823C42', // светлый бордовый для карточек
+					accent: '#512226',    // средний бордовый для карточек
+					light: '#FFF8E7'      // светлый фон для бейджей
 				}
 			},
 			borderRadius: {
