@@ -79,52 +79,98 @@ const Dashboard = () => {
           </div>
         </div>
         
-        {/* Секция с популярной игрой - Valorant */}
-        <FeaturedGameCard 
-          title="Valorant"
-          description="Valorant is a multiplayer computer game developed and published by Riot Games. Valorant is Riot Games' first first-person shooter game."
-          imageSrc={valorantImage}
-          tags={["Popular"]}
-          reviews={"+53 Reviews"}
-        />
-        
-        {/* Секция New Games и Your Statistic */}
-        <div className="grid grid-cols-3 gap-6 mt-6">
+        {/* Основная сетка контента: 3 колонки */}
+        <div className="grid grid-cols-3 gap-6">
+          {/* Левая часть (2 колонки) */}
           <div className="col-span-2">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold">New Games</h2>
-              <Button variant="link" className="text-white">See More</Button>
+            {/* Секция с популярной игрой - Valorant */}
+            <FeaturedGameCard 
+              title="Valorant"
+              description="Valorant is a multiplayer computer game developed and published by Riot Games. Valorant is Riot Games' first first-person shooter game."
+              imageSrc={valorantImage}
+              tags={["Popular"]}
+              reviews={"+53 Reviews"}
+            />
+            
+            {/* Секция New Games */}
+            <div className="mt-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">New Games</h2>
+                <Button variant="link" className="text-white">See More</Button>
+              </div>
+              
+              {/* Карточки с новыми играми */}
+              <div className="grid grid-cols-2 gap-4 relative">
+                <GameCard 
+                  title="Uncharted 4" 
+                  description="is the sequel to Uncharted 3: Drake's Deception and the final installment of Nathan Drake's adventures."
+                  imageSrc={unchartedImage}
+                  tags={["video"]}
+                  videoButton={true}
+                />
+                <GameCard 
+                  title="Dishonored: Standard Edition" 
+                  description=""
+                  imageSrc={dishonoredImage}
+                  tags={[]}
+                  videoButton={false}
+                />
+                
+                {/* Кнопка "Далее" */}
+                <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-10">
+                  <Button variant="ghost" className="rounded-full bg-white/10 hover:bg-white/20 w-12 h-12 flex items-center justify-center">
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                      <path d="M9 4L16 12L9 20" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Button>
+                </div>
+              </div>
             </div>
             
-            {/* Карточки с новыми играми */}
-            <div className="grid grid-cols-2 gap-4 relative">
-              <GameCard 
-                title="Uncharted 4" 
-                description="is the sequel to Uncharted 3: Drake's Deception and the final installment of Nathan Drake's adventures."
-                imageSrc={unchartedImage}
-                tags={["video"]}
-                videoButton={true}
-              />
-              <GameCard 
-                title="Dishonored: Standard Edition" 
-                description=""
-                imageSrc={dishonoredImage}
-                tags={[]}
-                videoButton={false}
-              />
-              
-              {/* Кнопка "Далее" */}
-              <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-10">
-                <Button variant="ghost" className="rounded-full bg-white/10 hover:bg-white/20 w-12 h-12 flex items-center justify-center">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 4L16 12L9 20" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Button>
+            {/* Рекомендуемые игры */}
+            <div className="mt-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">Recommended for you</h2>
+                <Button variant="link" className="text-white">See More</Button>
               </div>
+              
+              <div className="grid grid-cols-3 gap-4">
+                <RecommendedGame
+                  title="Unravel 2"
+                  subtitle="Standard Edition + Starter Pass"
+                  imageSrc={unravelImage}
+                />
+                <RecommendedGame
+                  title="Subway Surf"
+                  subtitle=""
+                  imageSrc={subwayImage}
+                />
+                <RecommendedGame
+                  title="Red Dead Redemption 3"
+                  subtitle="Premium Pack"
+                  imageSrc={rdrImage}
+                />
+              </div>
+            </div>
+            
+            {/* Секция Last Downloads */}
+            <div className="mt-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">Last Downloads</h2>
+                <Button variant="link" className="text-white">See More</Button>
+              </div>
+              
+              <LastDownloadCard 
+                title="FIFA 23"
+                category="Sports simulator"
+                size="265MB of 123GB"
+                time="1 hour 23 min."
+                imageSrc={fifaImage}
+              />
             </div>
           </div>
           
-          {/* Статистика пользователя */}
+          {/* Правая часть (1 колонка) - Статистика пользователя */}
           <div>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">Your Statistic</h2>
@@ -140,48 +186,6 @@ const Dashboard = () => {
               { game: "Warcraft", hours: "4,580h", icon: warcraftIcon, color: "#7F72EA" }
             ]} />
           </div>
-        </div>
-        
-        {/* Рекомендуемые игры */}
-        <div className="mt-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold">Recommended for you</h2>
-            <Button variant="link" className="text-white">See More</Button>
-          </div>
-          
-          <div className="grid grid-cols-3 gap-4">
-            <RecommendedGame
-              title="Unravel 2"
-              subtitle="Standard Edition + Starter Pass"
-              imageSrc={unravelImage}
-            />
-            <RecommendedGame
-              title="Subway Surf"
-              subtitle=""
-              imageSrc={subwayImage}
-            />
-            <RecommendedGame
-              title="Red Dead Redemption 3"
-              subtitle="Premium Pack"
-              imageSrc={rdrImage}
-            />
-          </div>
-        </div>
-        
-        {/* Секция Last Downloads */}
-        <div className="mt-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold">Last Downloads</h2>
-            <Button variant="link" className="text-white">See More</Button>
-          </div>
-          
-          <LastDownloadCard 
-            title="FIFA 23"
-            category="Sports simulator"
-            size="265MB of 123GB"
-            time="1 hour 23 min."
-            imageSrc={fifaImage}
-          />
         </div>
       </div>
       

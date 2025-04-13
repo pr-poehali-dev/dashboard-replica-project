@@ -12,8 +12,8 @@ type FeaturedGameCardProps = {
 
 export const FeaturedGameCard = ({ title, description, imageSrc, tags, reviews }: FeaturedGameCardProps) => {
   return (
-    <Card className="w-full bg-[#823C42] rounded-3xl overflow-hidden">
-      <div className="flex">
+    <Card className="w-full bg-[#823C42] rounded-3xl overflow-hidden h-[280px]">
+      <div className="flex h-full">
         <div className="p-6 w-1/2">
           <div className="flex gap-2 mb-4">
             {tags.map((tag, index) => (
@@ -26,8 +26,8 @@ export const FeaturedGameCard = ({ title, description, imageSrc, tags, reviews }
             ))}
           </div>
           
-          <h1 className="text-4xl font-bold mb-4">{title}</h1>
-          <p className="text-sm text-gray-200 mb-6">{description}</p>
+          <h1 className="text-4xl font-bold mb-3">{title}</h1>
+          <p className="text-sm text-gray-200 mb-5 line-clamp-3">{description}</p>
           
           <div className="flex items-center">
             <div className="flex -space-x-2 mr-3">

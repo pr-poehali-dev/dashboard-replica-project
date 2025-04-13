@@ -15,7 +15,7 @@ type StatsCardProps = {
 
 export const StatsCard = ({ totalHours, gameStats }: StatsCardProps) => {
   return (
-    <Card className="bg-[#512226] rounded-3xl p-6 h-full">
+    <Card className="bg-[#512226] rounded-3xl p-6 h-[280px]">
       <div className="flex flex-col items-center justify-between h-full">
         <div className="text-center mb-6">
           <p className="text-sm text-gray-300 mb-2">Total hours</p>
