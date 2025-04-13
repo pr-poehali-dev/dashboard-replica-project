@@ -19,7 +19,7 @@ export const LastDownloadCard = ({ title, category, size, time, imageSrc }: Last
         </div>
         
         <div className="flex-1">
-          <h3 className="font-bold">{title}</h3>
+          <h3 className="font-bold text-base">{title}</h3>
           <Badge className="bg-[#6D2C32] text-white rounded-full text-xs">
             {category}
           </Badge>
@@ -31,14 +31,14 @@ export const LastDownloadCard = ({ title, category, size, time, imageSrc }: Last
             <p className="text-xs text-gray-300">{size}</p>
           </div>
           
-          <Button variant="ghost" className="rounded-full p-1 bg-[#6D2C32]">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 2L18 12L6 22V2Z" fill="white" />
+          <Button variant="ghost" className="rounded-full p-2 bg-[#6D2C32]">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+              <path d="M6 4L18 12L6 20V4Z" fill="white" />
             </svg>
           </Button>
           
-          <Button variant="ghost" className="rounded-full p-1 bg-[#6D2C32]">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Button variant="ghost" className="rounded-full p-2 bg-[#6D2C32]">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
               <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Button>

@@ -62,13 +62,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Добавленные цвета для дашборда
 				game: {
-					dark: '#441C1F',
-					primary: '#6D2C32',
-					secondary: '#823C42',
-					accent: '#512226',
-					light: '#FFF8E7'
+					dark: 'hsl(var(--game-dark))',
+					primary: 'hsl(var(--game-primary))',
+					secondary: 'hsl(var(--game-secondary))',
+					accent: 'hsl(var(--game-accent))',
+					light: 'hsl(var(--game-light))'
 				}
 			},
 			borderRadius: {
