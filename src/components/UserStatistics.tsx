@@ -47,59 +47,24 @@ export const UserStatistics = () => {
         <div className="text-center mb-6">
           <p className="text-sm text-gray-300 mb-2">Total hours</p>
           
-          {/* Сложный круговой элемент */}
+          {/* Прямая вставка круга с изображения */}
           <div className="relative w-36 h-36 flex items-center justify-center">
-            {/* Основа круга - градиент с разной толщиной */}
-            <div className="absolute inset-0">
-              <svg width="100%" height="100%" viewBox="0 0 120 120">
-                <defs>
-                  {/* Градиенты для разных секций */}
-                  <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#ED3E48" />
-                    <stop offset="100%" stopColor="#FF6B6B" />
-                  </linearGradient>
-                  <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#E6DB74" />
-                    <stop offset="100%" stopColor="#F5E98D" />
-                  </linearGradient>
-                  <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#7F72EA" />
-                    <stop offset="100%" stopColor="#A397FF" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Красная секция (19.5% времени) */}
-                <path 
-                  d="M60,60 L60,18 A42,42 0 0,1 88,38 Z" 
-                  fill="url(#redGradient)" 
-                />
-                
-                {/* Желтая секция (44%) */}
-                <path 
-                  d="M60,60 L88,38 A42,42 0 0,1 42,96 Z" 
-                  fill="url(#yellowGradient)" 
-                />
-                
-                {/* Фиолетовая секция (36.5%) */}
-                <path 
-                  d="M60,60 L42,96 A42,42 0 0,1 60,18 Z" 
-                  fill="url(#purpleGradient)" 
-                />
-                
-                {/* Внутренний круг темного фона */}
-                <circle cx="60" cy="60" r="30" fill="#512226" />
-              </svg>
-            </div>
+            {/* Изображение круга напрямую с референса */}
+            <img 
+              src="https://cdn.poehali.dev/files/aa3022a4-fe01-4f57-be7d-bd854b127897.png" 
+              alt="Hours circle" 
+              className="absolute inset-0 w-full h-full object-contain"
+            />
             
-            {/* Центральный текст */}
-            <div className="z-10 text-center">
-              <p className="text-3xl font-bold text-white">12,340h</p>
+            {/* Центральный текст поверх изображения */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <p className="text-3xl font-bold text-white z-10">12,340h</p>
             </div>
           </div>
         </div>
         
         {/* Иконки с часами */}
-        <div className="w-full grid grid-cols-3 gap-4">
+        <div className="w-full grid grid-cols-3 gap-4 mt-2">
           {stats.map((stat) => (
             <GameStatItem key={stat.id} stat={stat} />
           ))}
@@ -112,12 +77,12 @@ export const UserStatistics = () => {
 const GameStatItem = ({ stat }: { stat: GameStat }) => {
   return (
     <div className="flex flex-col items-center">
-      {/* Круглая цветная иконка без обводки */}
+      {/* Круглая цветная иконка без обводки - прямо с изображения */}
       <div className="w-12 h-12 rounded-full flex items-center justify-center mb-1.5" style={{ backgroundColor: stat.color }}>
         <img 
           src={stat.image} 
           alt={stat.name} 
-          className="w-8 h-8 object-contain"
+          className="w-7 h-7 object-contain"
         />
       </div>
       <p className="text-sm font-medium text-white">{stat.hours}</p>
